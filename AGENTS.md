@@ -1,13 +1,13 @@
 # Orientações para agentes
 
-Este projeto é um portfólio em React, TypeScript e Vite. Comece pelo `README.md` para conhecer a estrutura e pelo `CHANGELOG.md` para entender as mudanças recentes.
+Este projeto é um portfólio em React, TypeScript e Vite. Se houver um `CHANGELOG.md` local, leia-o para entender as mudanças recentes; consulte `package.json` para os comandos e `src/App.tsx` para a estrutura das seções.
 
 ## Registro das mudanças
 
-- Ao alterar o projeto, atualize `CHANGELOG.md` na mesma tarefa, antes de concluir a resposta.
+- Ao alterar o projeto, crie ou atualize o `CHANGELOG.md` local na mesma tarefa, antes de concluir a resposta. Ele é ignorado pelo Git.
 - Agrupe as alterações pela data local de São Paulo (`AAAA-MM-DD`). Se já houver uma seção para o dia, acrescente a mudança nela.
 - Para cada alteração, registre **o que mudou**, **por quê**, **arquivos afetados** e **como foi verificado**. Anote limitações ou pendências relevantes.
 - Descreva somente o que foi realizado e observado. Não apresente testes, revisão visual ou publicação como concluídos sem tê-los feito.
-- Atualize também o `README.md` quando mudarem as instruções de execução, a estrutura ou características permanentes do projeto.
+- Quando mudarem os comandos de execução, a estrutura ou características permanentes do projeto, registre a informação relevante no `CHANGELOG.md`.
 
 Mantenha o registro direto e legível para alguém que ainda não conhece o histórico da conversa.
