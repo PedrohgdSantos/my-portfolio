@@ -510,6 +510,7 @@ h2 em {
   display:grid;
   place-items:center;
   background:#0e0b14aa;
+  color:#fff;
 }
 
 .preview-arrow svg {
@@ -523,6 +524,7 @@ h2 em {
   border-radius:5px;
   box-shadow:0 15px 30px #0005;
   background:#0e0b14;
+  color:#f7f3fa;
   transform:rotate(-3deg);
   pointer-events:none;
 }
@@ -2193,7 +2195,6 @@ h2 em {
 [data-theme='light'] .tech-center strong { color:#5f2a8d; }
 [data-theme='light'] .tech-orbit-item[data-tech='MySQL'] img,
 [data-theme='light'] .tech-center[data-tech='MySQL'] img { filter:brightness(0) invert(1); }
-[data-theme='light'] .tech-center strong { color:#542a78; }
 
 [data-theme='light'] .filters button { border-color:#cfbedc; color:#5f4b70; }
 [data-theme='light'] .filters .active { color:#fff; border-color:var(--accent); }
@@ -2529,7 +2530,30 @@ h2 em {
 .certificates-empty h3 { font-size:22px; }
 .certificates-empty p { max-width:580px; margin-top:8px; color:#ded5e7; font-size:16px; }
 
-[data-theme='light'] .certificate-card { border-color:#d7c7e4; background:#fff; }
+[data-theme='light'] .certificate-card {
+  border-color:#d6c7e2;
+  background:#f2ecf7;
+  filter:none;
+  box-shadow:0 7px 22px #54386d14;
+}
+[data-theme='light'] .certificate-card.is-active,
+[data-theme='light'] .certificate-card:focus-within {
+  border-color:#a67ac8;
+  background:#fff;
+  box-shadow:0 16px 38px #54386d2b;
+}
+[data-theme='light'] .certificate-media { position:relative; }
+[data-theme='light'] .certificate-media::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#54386d24,#54386d3d);
+  opacity:1;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+[data-theme='light'] .certificate-card.is-active .certificate-media::after,
+[data-theme='light'] .certificate-card:focus-within .certificate-media::after { opacity:0; }
 [data-theme='light'] .certificates-heading h3 em { color:#76568e; }
 [data-theme='light'] .certificate-kind { border-color:#c9b4d8; color:#69358f; }
 [data-theme='light'] .certificate-number,
@@ -2559,6 +2583,7 @@ h2 em {
 @media (prefers-reduced-motion:reduce) {
   .certificates-track { scroll-behavior:auto; }
   .certificate-card { transition:none; }
+  [data-theme='light'] .certificate-media::after { transition:none; }
   .certificates-progress button::before { transition:none; }
 }
 

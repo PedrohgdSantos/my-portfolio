@@ -11,3 +11,7 @@ Este projeto é um portfólio em React, TypeScript e Vite. Se houver um `CHANGEL
 - Quando mudarem os comandos de execução, a estrutura ou características permanentes do projeto, registre a informação relevante no `CHANGELOG.md`.
 
 Mantenha o registro direto e legível para alguém que ainda não conhece o histórico da conversa.
+
+## Commits
+
+Quando o proprietário pedir para criar um commit, use a skill `commit-and-push` para incluir as alterações pertinentes, criar o commit e fazer o push normal para a branch atual.
