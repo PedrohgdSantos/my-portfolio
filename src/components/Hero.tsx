@@ -60,10 +60,6 @@ export function Hero() {
             <span>Um pouco sobre mim</span><ArrowRight size={17} aria-hidden="true" />
           </a>
         </div>
-        <div className="hero-bottom">
-          <span>BASEADO NO BRASIL</span>
-          <span><i /> CÓDIGO COM PROPÓSITO</span>
-        </div>
       </div>
       <CodeArtwork />
     </section>
