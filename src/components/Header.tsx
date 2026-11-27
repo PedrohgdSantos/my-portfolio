@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { Logo } from './Logo';
 
 const links = [
@@ -7,6 +7,7 @@ const links = [
   ['Projetos', 'projetos'],
   ['Sobre mim', 'sobre'],
   ['Serviços', 'servicos'],
+  ['Contato', 'contato'],
 ] as const;
 
 export function Header() {
@@ -25,7 +26,7 @@ export function Header() {
     const closeOutside = (event: PointerEvent) => {
       if (!headerRef.current?.contains(event.target as Node)) setMenuOpen(false);
     };
-    const desktop = window.matchMedia('(min-width: 981px)');
+    const desktop = window.matchMedia('(min-width: 761px)');
     const closeOnDesktop = () => { if (desktop.matches) setMenuOpen(false); };
     document.addEventListener('keydown', closeOnEscape);
     document.addEventListener('pointerdown', closeOutside);
@@ -52,44 +53,39 @@ export function Header() {
     <header className="header" ref={headerRef}>
       <div className="header-brand" onClickCapture={() => setMenuOpen(false)}>
         <Logo />
-        <span className="header-brand-text"><strong>Pedro Henrique</strong><small>Desenvolvedor Full Stack</small></span>
       </div>
       <nav id="primary-navigation" className={menuOpen ? 'open' : ''} aria-label="Navegação principal">
         {links.map(([label, id]) => (
           <a key={id} href={'#' + id} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a className="nav-contact shine-action" href="#contato" onClick={() => setMenuOpen(false)}>Vamos conversar <ArrowUpRight size={17} aria-hidden="true" /></a>
       </nav>
       <div className="header-actions">
-        <a className="header-contact shine-action" href="#contato">
-          Vamos conversar <ArrowUpRight size={17} aria-hidden="true" />
-        </a>
-      <button
-        className="theme-toggle"
-        type="button"
-        aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
-        title={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
-        onClick={toggleTheme}
-      >
-        <span
-          key={theme}
-          className={'theme-toggle-icon' + (hasToggledTheme ? ' is-entering' : '')}
-          aria-hidden="true"
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
+          title={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
+          onClick={toggleTheme}
         >
-          {theme === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
-        </span>
-      </button>
-      <button
-        className="menu"
-        type="button"
-        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-        aria-expanded={menuOpen}
-        aria-controls="primary-navigation"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <Menu className="menu-open-icon" aria-hidden="true" />
-        <X className="menu-close-icon" aria-hidden="true" />
-      </button>
+          <span
+            key={theme}
+            className={'theme-toggle-icon' + (hasToggledTheme ? ' is-entering' : '')}
+            aria-hidden="true"
+          >
+            {theme === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
+          </span>
+        </button>
+        <button
+          className="menu"
+          type="button"
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <Menu className="menu-open-icon" aria-hidden="true" />
+          <X className="menu-close-icon" aria-hidden="true" />
+        </button>
       </div>
     </header>
   );
